@@ -1,0 +1,89 @@
+{
+  "name": "rpi-temperature-control",
+  "version": "1.0.0",
+  "description": "none",
+  "main": "src/index.js",
+  "types": "types/todo.d.ts",
+  "typings": "types/todo.d.ts",
+  "bin": {
+    "rtc": "./dist/bin/index.js"
+  },
+  "man": [
+    "./man/doc.1"
+  ],
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc -w",
+    "prebuild": "rimraf dist types",
+    "lint": "eslint src bin test",
+    "format": "eslint --fix src bin test",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "coverage:": "codecov -t tokentodo",
+    "report": "todo",
+    "prepare": "npm test",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "changelog-all": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "commit": "cz",
+    "husky": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/al0rid4l/rpi-temperature-control.git"
+  },
+  "keywords": [
+    "raspberry",
+    "pi"
+  ],
+  "author": "al0rid4l",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/al0rid4l/rpi-temperature-control/issues"
+  },
+  "homepage": "https://github.com/al0rid4l/rpi-temperature-control#readme",
+  "files": [
+    "dist",
+    "man",
+    "docs",
+    "types"
+  ],
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "figures": "^3.2.0",
+    "onoff": "^6.0.3",
+    "ora": "^5.4.0",
+    "semver": "^7.3.5",
+    "systeminformation": "^5.6.21",
+    "tslib": "^2.2.0",
+    "yargonaut": "^1.1.4",
+    "yargs": "^17.0.1"
+  },
+  "devDependencies": {
+    "@types/figlet": "^1.5.1",
+    "@types/figures": "^3.0.1",
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.3.0",
+    "@types/semver": "^7.3.6",
+    "@types/yargs": "^16.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.23.0",
+    "@typescript-eslint/parser": "^4.23.0",
+    "codecov": "^3.8.2",
+    "commitizen": "^4.2.4",
+    "conventional-changelog-cli": "^2.1.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.26.0",
+    "husky": "^6.0.0",
+    "jest": "^26.6.3",
+    "lint-staged": "^11.0.0",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^26.5.6",
+    "typescript": "^4.2.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
