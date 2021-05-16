@@ -20,7 +20,7 @@
     "prebuild": "rimraf dist types",
     "lint": "eslint src bin test",
     "format": "eslint --fix src bin test",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\"",
     "coverage:": "codecov -t tokentodo",
     "report": "todo",
     "prepare": "npm test",
