@@ -1,5 +1,0 @@
-.eslintrc.js
-.prettierrc.js
-dist/**/*.js
-example/**/*.js
-test_cache/**/*.js
