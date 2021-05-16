@@ -128,10 +128,10 @@ process.addListener('uncaughtException', handleError);
 		lastTemperature = currentTemperature;
 
 		// 温度过高或上升过快则开启风扇
-		if(currentTemperature > upperBound || k > SPEED) {
+		if(currentTemperature >= upperBound || k >= SPEED) {
 			signal = HIGH;
 			await Promise.all(powers.map(p => p.write(signal)));
-		} else if (currentTemperature < lowerBound) {
+		} else if (currentTemperature <= lowerBound) {
 			signal = LOW;
 			await Promise.all(powers.map(p => p.write(signal)));
 		}
