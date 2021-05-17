@@ -25,7 +25,7 @@ jobs:
       - name: Publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_SECRET }}
-        run: cat ~/.npmrc || cat .npmrc || echo NODE_AUTH_TOKEN || npm publish ./
+        run: npm publish ./
 
 
 
