@@ -135,10 +135,9 @@ process.addListener('uncaughtException', handleError);
 			signal = LOW;
 			await Promise.all(powers.map(p => p.write(signal)));
 		}
-
-
-		await sleep(interval);
+		
 		logger.info(`temperature: ${currentTemperature}, fan status: ${signal === HIGH ? 'on' : 'off'}`);
+		await sleep(interval);
 	}
 
 })();
