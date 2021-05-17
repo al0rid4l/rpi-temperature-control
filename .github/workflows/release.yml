@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Remove .npmrc
+        run: rm .npmrc
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
@@ -25,7 +27,7 @@ jobs:
       - name: Publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_SECRET }}
-        run: npm publish ./
+        run: cat .npmrc && npm publish ./
 
 
 
