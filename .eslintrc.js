@@ -12,9 +12,15 @@ module.exports = {
 		project: './tsconfig.json',
 		tsconfigRootDir: './'
 	},
-	plugins: ['@typescript-eslint'],
+	plugins: [
+		'@typescript-eslint',
+		'security-node',
+		'regexp'
+	],
 	extends: [
 		'eslint:recommended',
+		'plugin:regexp/recommended',
+		'plugin:security-node/recommended',
 		'plugin:@typescript-eslint/recommended'
 	],
 	rules: {
@@ -83,6 +89,7 @@ module.exports = {
 			}
 		],
 		'arrow-parens': ['error', 'as-needed'],
+		'require-atomic-updates': 'error',
 		// for ts
 		'@typescript-eslint/no-explicit-any': 'off',
 		'@typescript-eslint/explicit-module-boundary-types': ['warn', {
